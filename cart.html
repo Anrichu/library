@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #004080;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #004080;
+            color: white;
+        }
+
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003366;
+        }
+
+        h3 {
+            text-align: right;
+            margin-right: 10%;
+            color: #333;
+        }
+
+        .checkout {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .checkout button {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🛒 Your Shopping Cart</h2>
+
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>Book</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>AI</td>
+                <td>S. Russel</td>
+                <td><span class="price">63</span></td>
+                <td><input type="number" value="1" min="1" onchange="updateTotals()"></td>
+                <td class="total">63</td>
+                <td><button onclick="removeRow(this)">Remove</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3 id="grand-total">Grand Total: Rs 103.5</h3>
+
+    <div class="checkout">
+        <button>Proceed to Checkout</button>
+    </div>
+
+    <script>
+        function updateTotals() {
+            let grandTotal = 0;
+            const rows = document.querySelectorAll('#cart-table tbody tr');
+            rows.forEach(row => {
+                const price = parseFloat(row.querySelector('.price').textContent);
+                const qty = parseInt(row.querySelector('input[type="number"]').value);
+                const total = price * qty;
+                row.querySelector('.total').textContent = total.toFixed(2);
+                grandTotal += total;
+            });
+            document.getElementById("grand-total").textContent = `Grand Total: Rs ${grandTotal.toFixed(2)}`;
+        }
+
+        function removeRow(button) {
+            const row = button.parentNode.parentNode;
+            row.remove();
+            updateTotals();
+        }
+
+        // Initial calculation
+        updateTotals();
+    </script>
+
+</body>
+</html>

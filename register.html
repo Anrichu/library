@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #004080;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .nav {
+            background-color: #e6e6e6;
+            padding: 12px 20px;
+            text-align: center;
+        }
+
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #004080;
+            font-weight: bold;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px 35px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #004080;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .gender {
+            margin-top: 10px;
+        }
+
+        .gender input {
+            margin-right: 8px;
+        }
+
+        .buttons {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 25px;
+            margin: 0 10px;
+            font-weight: bold;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #003366;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: 90%;
+                padding: 20px;
+            }
+        }
+    </style>
+
+    <script>
+        function validateForm(event) {
+            const pass = document.getElementById("pass").value;
+            const cpass = document.getElementById("cpass").value;
+            if (pass !== cpass) {
+                alert("Passwords do not match!");
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>📘 Online Book Store</h1>
+    </div>
+
+    <div class="nav">
+        <a href="home.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="catalogue.html">Catalogue</a>
+        <a href="cart.html">Cart</a>
+    </div>
+
+    <div class="container">
+        <h2>User Registration</h2>
+        <form onsubmit="validateForm(event)">
+            <label for="fname">Full Name:</label>
+            <input type="text" id="fname" name="fname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="user">Username:</label>
+            <input type="text" id="user" name="user" required>
+
+            <label for="pass">Password:</label>
+            <input type="password" id="pass" name="pass" required>
+
+            <label for="cpass">Confirm Password:</label>
+            <input type="password" id="cpass" name="cpass" required>
+
+            <label>Gender:</label>
+            <div class="gender">
+                <input type="radio" id="male" name="gender" value="Male" required>
+                <label for="male" style="display: inline;">Male</label>
+
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female" style="display: inline;">Female</label>
+            </div>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <div class="buttons">
+                <input type="reset" value="Reset">
+                <input type="submit" value="Register">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

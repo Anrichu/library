@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Electronics Books - Pondicherry University</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f8fc;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #004080;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #004080;
+            color: white;
+        }
+
+        td img {
+            height: 90px;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #004080;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #003366;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📘 Electronics & Communication Engineering Books</h2>
+
+    <table>
+        <tr>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Price</th>
+            <th>Add to Cart</th>
+        </tr>
+        <tr>
+            <td><img src="digital_electronics.jpg" alt="Digital Electronics"></td>
+            <td>Digital Electronics</td>
+            <td>M. Morris Mano</td>
+            <td>Pearson</td>
+            <td>Rs 460</td>
+            <td><button onclick="addToCart('Digital Electronics')">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="analog_communication.jpg" alt="Analog Communication"></td>
+            <td>Analog Communication</td>
+            <td>Simon Haykin</td>
+            <td>Wiley</td>
+            <td>Rs 520</td>
+            <td><button onclick="addToCart('Analog Communication')">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="vlsi_design.jpg" alt="VLSI Design"></td>
+            <td>VLSI Design</td>
+            <td>Kang & Leblebici</td>
+            <td>McGraw-Hill</td>
+            <td>Rs 600</td>
+            <td><button onclick="addToCart('VLSI Design')">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="signals_systems.jpg" alt="Signals and Systems"></td>
+            <td>Signals and Systems</td>
+            <td>Alan V. Oppenheim</td>
+            <td>PHI</td>
+            <td>Rs 490</td>
+            <td><button onclick="addToCart('Signals and Systems')">Add to Cart</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function addToCart(bookTitle) {
+            alert(bookTitle + " has been added to your cart.");
+            // You can later add logic to store this info in localStorage or backend
+        }
+    </script>
+
+</body>
+</html>

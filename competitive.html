@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Competitive Exam Books - Pondicherry University</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1d3557;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 90%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #1d3557;
+            color: white;
+        }
+
+        td img {
+            height: 90px;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            background-color: #1d3557;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0f223a;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>📘 Competitive Exam Books</h2>
+
+    <table>
+        <tr>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Price</th>
+            <th>Add to Cart</th>
+        </tr>
+        <tr>
+            <td><img src="upsc_guide.jpg" alt="UPSC Guide"></td>
+            <td>UPSC Civil Services Guide</td>
+            <td>TMH Publications</td>
+            <td>McGraw Hill</td>
+            <td>Rs 599</td>
+            <td><button onclick="addToCart('UPSC Civil Services Guide')">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="ugc_net.jpg" alt="UGC NET"></td>
+            <td>UGC NET Paper 1</td>
+            <td>KVS Madaan</td>
+            <td>Arihant Publications</td>
+            <td>Rs 445</td>
+            <td><button onclick="addToCart('UGC NET Paper 1')">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="gate_cs.jpg" alt="GATE CSE"></td>
+            <td>GATE Computer Science</td>
+            <td>Nikhil Balaji</td>
+            <td>Made Easy</td>
+            <td>Rs 520</td>
+            <td><button onclick="addToCart('GATE Computer Science')">Add to Cart</button></td>
+        </tr>
+        <tr>
+            <td><img src="bank_exam.jpg" alt="Bank PO"></td>
+            <td>Bank PO Practice Book</td>
+            <td>Arihant Experts</td>
+            <td>Arihant</td>
+            <td>Rs 325</td>
+            <td><button onclick="addToCart('Bank PO Practice Book')">Add to Cart</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function addToCart(bookTitle) {
+            alert(bookTitle + " has been added to your cart!");
+            // You can also save to localStorage or send to backend here
+        }
+    </script>
+
+</body>
+</html>
